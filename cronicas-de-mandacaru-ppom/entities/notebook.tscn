@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm2ck64jsydwo"]
+
+[ext_resource type="Script" uid="uid://nyrvi34gcwrf" path="res://Script/notebook.gd" id="1_b2ir6"]
+[ext_resource type="Texture2D" uid="uid://2xg636t7b71u" path="res://Sprites/Seasonal Tilesets/image-removebg-preview (2).png" id="1_kxf5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2ir6"]
+size = Vector2(10.25333, 11.6)
+
+[node name="Area2D" type="Area2D" groups=["items"]]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_b2ir6")
+puzzle_id = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.5424994)
+scale = Vector2(0.038917836, 0.05828657)
+texture = ExtResource("1_kxf5a")
+
+[node name="Target" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.1882353)
+position = Vector2(-5.04871e-29, -18)
+scale = Vector2(0.038917836, 0.05828657)
+texture = ExtResource("1_kxf5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0069282055, -0.25000015)
+scale = Vector2(1.169, 1.169)
+shape = SubResource("RectangleShape2D_b2ir6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

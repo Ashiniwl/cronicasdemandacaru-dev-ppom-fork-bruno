@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b66wgcm6d6i7a"]
+
+[ext_resource type="FontFile" uid="uid://cg7nmsrpxuvmx" path="res://fonts/determination.ttf" id="1_gwfd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwfd0"]
+
+[node name="Button" type="Button"]
+offset_right = 78.0
+offset_bottom = 40.0
+scale = Vector2(1, 0.98771644)
+theme_override_colors/font_color = Color(0.8186009, 0.9465875, 0, 1)
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("1_gwfd0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gwfd0")
+text = "Jogar"
