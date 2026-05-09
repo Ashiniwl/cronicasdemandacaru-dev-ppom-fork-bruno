@@ -16,7 +16,7 @@ enum PlayerState {
 	falling,
 	dead,
 	hurt,
-	attack
+	
 }
 	
 @export var MAX_SPEED: float = 80.0
@@ -53,10 +53,11 @@ func _set_health(value):
 	
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("attack") and status not in [PlayerState.attack, PlayerState.hurt, PlayerState.dead] and is_on_floor():
-		go_to_attack_state()
-		
-		return
+	if Input.is_action_pressed("down"):
+		set_collision_mask_value(8, false)
+	else:
+		set_collision_mask_value(8, true)
+
 	match status:
 		PlayerState.idle:
 			idle_state(delta)
@@ -70,8 +71,7 @@ func _physics_process(delta: float) -> void:
 			dead_state(delta)
 		PlayerState.hurt:
 			hurt_state(delta)
-		PlayerState.attack:
-			pass
+	
 			
 	move_and_slide()
 			
@@ -148,29 +148,6 @@ func go_to_hurt_state():
 	else:
 		# Se ainda estiver no ar (após o recuo)
 		go_to_falling_state()
-func go_to_attack_state():
-	if status == PlayerState.dead or status == PlayerState.hurt:
-		return
-
-	status = PlayerState.attack
-	anim.play("attack")
-
-	# cancela movimento enquanto ataca
-	velocity.x = 0
-	
-	# tempo da animação de ataque
-	await anim.animation_finished
-
-	# sair do ataque (retorna ao correto)
-	if is_on_floor():
-		if abs(velocity.x) > 1:
-			go_to_walk_state()
-		else:
-			go_to_idle_state()
-	else:
-		go_to_falling_state()
-	
-	
 
 	
 func idle_state(delta:):
