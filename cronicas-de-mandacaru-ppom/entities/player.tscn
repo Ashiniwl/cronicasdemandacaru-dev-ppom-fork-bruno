@@ -1,29 +1,18 @@
-[gd_scene load_steps=78 format=3 uid="uid://tsvnbubb6bg4"]
+[gd_scene load_steps=55 format=3 uid="uid://tsvnbubb6bg4"]
 
 [ext_resource type="Script" uid="uid://ckd7qd41xb7hr" path="res://Script/character_body_2d.gd" id="1_merdl"]
-[ext_resource type="Texture2D" uid="uid://e80tro0eoprs" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack6.png" id="2_rw12f"]
 [ext_resource type="PackedScene" uid="uid://tdh6dhpiejto" path="res://entities/health_bar.tscn" id="2_y10x8"]
-[ext_resource type="Texture2D" uid="uid://ckdsouf7l2af0" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack7.png" id="3_is18v"]
-[ext_resource type="Texture2D" uid="uid://cwajjacb1ol6d" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack8.png" id="4_bp1bk"]
 [ext_resource type="Texture2D" uid="uid://b00pn8jsjtg3u" path="res://Sprites/HOBBIT/DEATH/Hobbit - death1.png" id="4_sn2x3"]
-[ext_resource type="Texture2D" uid="uid://b1nlavmjdu73b" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack9.png" id="5_x2tvf"]
 [ext_resource type="Texture2D" uid="uid://b35pqsf2cmef0" path="res://Sprites/HOBBIT/DEATH/Hobbit - death2.png" id="5_y10x8"]
 [ext_resource type="Texture2D" uid="uid://b32f4oxptmwgf" path="res://Sprites/HOBBIT/DEATH/Hobbit - death3.png" id="6_1sc42"]
-[ext_resource type="Texture2D" uid="uid://bk6skc70qugjn" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack10.png" id="6_45u4k"]
 [ext_resource type="Texture2D" uid="uid://we42kbrps3u7" path="res://Sprites/HOBBIT/DEATH/Hobbit - death4.png" id="7_0t50q"]
-[ext_resource type="Texture2D" uid="uid://cotus4qca344b" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack11.png" id="7_y4qe1"]
 [ext_resource type="Texture2D" uid="uid://2ukwlp15qhy0" path="res://Sprites/HOBBIT/DEATH/Hobbit - death5.png" id="8_5qcl2"]
-[ext_resource type="Texture2D" uid="uid://k6wcktygxlxl" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack12.png" id="8_ccdvw"]
 [ext_resource type="Texture2D" uid="uid://byiogqph0y8p6" path="res://Sprites/HOBBIT/DEATH/Hobbit - death6.png" id="9_1w6s4"]
-[ext_resource type="Texture2D" uid="uid://ba1yoe22pg121" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack13.png" id="9_yx8b5"]
-[ext_resource type="Texture2D" uid="uid://mp3feq416w0r" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack15.png" id="10_jma00"]
 [ext_resource type="Texture2D" uid="uid://qacyw62g8rjj" path="res://Sprites/HOBBIT/DEATH/Hobbit - death7.png" id="10_yb7tu"]
 [ext_resource type="Texture2D" uid="uid://b3n1gxn6d364" path="res://Sprites/HOBBIT/DEATH/Hobbit - death8.png" id="11_b338v"]
 [ext_resource type="Texture2D" uid="uid://llh48b3mt7n2" path="res://Sprites/HOBBIT/JUMP/Hobbit - jumpt1.png" id="11_mdqif"]
-[ext_resource type="Texture2D" uid="uid://d4dpiy8nu8srn" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack16.png" id="11_xkrc4"]
 [ext_resource type="Texture2D" uid="uid://cmoogcw38te8r" path="res://Sprites/HOBBIT/JUMP/Hobbit - jumpt2.png" id="12_egchw"]
 [ext_resource type="Texture2D" uid="uid://de86jrvd6v3de" path="res://Sprites/HOBBIT/DEATH/Hobbit - death9.png" id="12_i1mej"]
-[ext_resource type="Texture2D" uid="uid://doagnmtc8d144" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack17.png" id="12_rwjqm"]
 [ext_resource type="Texture2D" uid="uid://cpib12ngbqva0" path="res://Sprites/HOBBIT/DEATH/Hobbit - death10.png" id="13_e45uk"]
 [ext_resource type="Texture2D" uid="uid://db1anhrm5jp5v" path="res://Sprites/HOBBIT/JUMP/Hobbit - jumpt3.png" id="13_ykqge"]
 [ext_resource type="Texture2D" uid="uid://bdjgsfjv3k6f2" path="res://Sprites/HOBBIT/JUMP/Hobbit - jumpt4.png" id="14_sn2x3"]
@@ -42,54 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://c2wif3antxbww" path="res://Tamanduá/correndo/correndo4.png" id="39_is18v"]
 [ext_resource type="Texture2D" uid="uid://ccsgmeuvlh3f3" path="res://Tamanduá/correndo/correndo5.png" id="40_bp1bk"]
 [ext_resource type="Texture2D" uid="uid://cofn4dbu1yxgq" path="res://Tamanduá/correndo/correndo6.png" id="41_x2tvf"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilajk"]
-atlas = ExtResource("2_rw12f")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aafgp"]
-atlas = ExtResource("2_rw12f")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rwb6"]
-atlas = ExtResource("3_is18v")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yposf"]
-atlas = ExtResource("4_bp1bk")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5hqg2"]
-atlas = ExtResource("5_x2tvf")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aoj7m"]
-atlas = ExtResource("6_45u4k")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbtmb"]
-atlas = ExtResource("7_y4qe1")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o75mw"]
-atlas = ExtResource("8_ccdvw")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwip8"]
-atlas = ExtResource("9_yx8b5")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tbg1"]
-atlas = ExtResource("10_jma00")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5wlq"]
-atlas = ExtResource("11_xkrc4")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofqlx"]
-atlas = ExtResource("12_rwjqm")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_is18v"]
 atlas = ExtResource("4_sn2x3")
@@ -173,47 +114,6 @@ region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i623q"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilajk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aafgp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1rwb6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yposf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5hqg2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aoj7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gbtmb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o75mw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rwip8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2tbg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5wlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ofqlx")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 11.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_is18v")
@@ -350,9 +250,8 @@ z_index = 2
 position = Vector2(0, -13)
 scale = Vector2(1.1692972, 1.0045136)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"idle"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.051567867
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2

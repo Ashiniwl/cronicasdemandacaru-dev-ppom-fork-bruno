@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Cronicas de Mandacaru PPOM"
+config/name="Cronicas de Mandacaru PPOM - FORK - BRUNO - OFICIAL"
 run/main_scene="uid://ceurjiyfeljuy"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
@@ -118,7 +118,7 @@ attack={
 2d_physics/layer_5="lethal_area"
 2d_physics/layer_6="water"
 2d_physics/layer_7="items"
-2d_physics/layer_8="player_projectile"
+2d_physics/layer_8="down_slabs"
 
 [rendering]
 

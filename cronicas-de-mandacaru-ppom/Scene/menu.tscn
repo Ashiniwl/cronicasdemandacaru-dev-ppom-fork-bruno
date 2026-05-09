@@ -1,18 +1,7 @@
-[gd_scene load_steps=100 format=3 uid="uid://ceurjiyfeljuy"]
+[gd_scene load_steps=77 format=3 uid="uid://ceurjiyfeljuy"]
 
 [ext_resource type="Script" uid="uid://bncnklakyl3hv" path="res://Script/menu.gd" id="1_eas8t"]
 [ext_resource type="FontFile" uid="uid://cg7nmsrpxuvmx" path="res://fonts/determination.ttf" id="2_u2k45"]
-[ext_resource type="Texture2D" uid="uid://e80tro0eoprs" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack6.png" id="3_ew0gf"]
-[ext_resource type="Texture2D" uid="uid://ckdsouf7l2af0" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack7.png" id="4_6tnk5"]
-[ext_resource type="Texture2D" uid="uid://cwajjacb1ol6d" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack8.png" id="5_cgkpt"]
-[ext_resource type="Texture2D" uid="uid://b1nlavmjdu73b" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack9.png" id="6_bjfvx"]
-[ext_resource type="Texture2D" uid="uid://bk6skc70qugjn" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack10.png" id="7_ngyfp"]
-[ext_resource type="Texture2D" uid="uid://cotus4qca344b" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack11.png" id="8_2llw8"]
-[ext_resource type="Texture2D" uid="uid://k6wcktygxlxl" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack12.png" id="9_fs1m0"]
-[ext_resource type="Texture2D" uid="uid://ba1yoe22pg121" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack13.png" id="10_p1c65"]
-[ext_resource type="Texture2D" uid="uid://mp3feq416w0r" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack15.png" id="11_1x0ro"]
-[ext_resource type="Texture2D" uid="uid://d4dpiy8nu8srn" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack16.png" id="12_mapsd"]
-[ext_resource type="Texture2D" uid="uid://doagnmtc8d144" path="res://Sprites/HOBBIT/ATTACK/Hobbit - attack17.png" id="13_3gxnr"]
 [ext_resource type="Texture2D" uid="uid://b00pn8jsjtg3u" path="res://Sprites/HOBBIT/DEATH/Hobbit - death1.png" id="14_5t1yb"]
 [ext_resource type="Texture2D" uid="uid://b35pqsf2cmef0" path="res://Sprites/HOBBIT/DEATH/Hobbit - death2.png" id="15_f8ahi"]
 [ext_resource type="Texture2D" uid="uid://b32f4oxptmwgf" path="res://Sprites/HOBBIT/DEATH/Hobbit - death3.png" id="16_68jqx"]
@@ -55,54 +44,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x646"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45on0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilajk"]
-atlas = ExtResource("3_ew0gf")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aafgp"]
-atlas = ExtResource("3_ew0gf")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rwb6"]
-atlas = ExtResource("4_6tnk5")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yposf"]
-atlas = ExtResource("5_cgkpt")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5hqg2"]
-atlas = ExtResource("6_bjfvx")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aoj7m"]
-atlas = ExtResource("7_ngyfp")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbtmb"]
-atlas = ExtResource("8_2llw8")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o75mw"]
-atlas = ExtResource("9_fs1m0")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwip8"]
-atlas = ExtResource("10_p1c65")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2tbg1"]
-atlas = ExtResource("11_1x0ro")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5wlq"]
-atlas = ExtResource("12_mapsd")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofqlx"]
-atlas = ExtResource("13_3gxnr")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_is18v"]
 atlas = ExtResource("14_5t1yb")
@@ -246,47 +187,6 @@ region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fwkbm"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ilajk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aafgp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1rwb6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yposf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5hqg2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aoj7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gbtmb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o75mw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rwip8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2tbg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5wlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ofqlx")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 11.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_is18v")
@@ -533,5 +433,5 @@ z_index = 2
 position = Vector2(0, -3.9999998)
 scale = Vector2(1.1692972, 1.0045136)
 sprite_frames = SubResource("SpriteFrames_fwkbm")
-animation = &"attack"
+animation = &"dead"
 autoplay = "idle"
