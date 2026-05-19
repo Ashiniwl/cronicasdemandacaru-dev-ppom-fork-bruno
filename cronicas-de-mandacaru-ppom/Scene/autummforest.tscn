@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://dbawvgnwitb47"]
+[gd_scene load_steps=23 format=4 uid="uid://dbawvgnwitb47"]
 
 [ext_resource type="PackedScene" uid="uid://tsvnbubb6bg4" path="res://entities/player.tscn" id="1_07h3t"]
 [ext_resource type="PackedScene" uid="uid://dtn1kb4yyw6ko" path="res://Scene/transition.tscn" id="1_u6jjf"]
-[ext_resource type="PackedScene" uid="uid://dcvwnokejte7e" path="res://entities/skeleton.tscn" id="2_jnhfv"]
 [ext_resource type="TileSet" uid="uid://dk1qfi3hmp7p8" path="res://Tiles/terrain.tres" id="2_o2q3j"]
 [ext_resource type="Texture2D" uid="uid://p4m7t722vyji" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="3_o2q3j"]
 [ext_resource type="Texture2D" uid="uid://rggkuuhbvqvr" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="4_wxqtn"]
@@ -102,21 +101,9 @@ position = Vector2(854, 115)
 shape = SubResource("RectangleShape2D_u6jjf")
 debug_color = Color(0.9951841, 0, 0.21677405, 0.41960785)
 
-[node name="skeleton" parent="Level End" instance=ExtResource("2_jnhfv")]
-position = Vector2(322, 175)
-
 [node name="Player" parent="." instance=ExtResource("1_07h3t")]
 position = Vector2(21, 181)
-MAX_SPEED = 80.0
-acceleration = 400.0
-deceleration = 400.0
-max_jump_count = 2.0
-
-[node name="HealthBar" parent="Player" index="0"]
-offset_left = -13.793259
-offset_top = -171.98898
-offset_right = 226.20674
-offset_bottom = -167.98898
+max_jump_count = 4.0
 
 [node name="Parallax2D 6" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0.1)

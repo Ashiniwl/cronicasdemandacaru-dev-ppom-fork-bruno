@@ -11,6 +11,11 @@ var puzzles = {
 		"question": "Em python, qual o comando para que a saída seja: Hello World!",
 		"answer": "print('Hello World!')",
 		"reward": Callable(self, "reward_notebook_1")
+	},
+	"notebook_2": {
+		"question": "Em python, qual o comando para declarar que a variável X recebe 15?",
+		"answer": "x = 15",
+		"reward": Callable(self, "reward_notebook_1")
 	}
 }
 

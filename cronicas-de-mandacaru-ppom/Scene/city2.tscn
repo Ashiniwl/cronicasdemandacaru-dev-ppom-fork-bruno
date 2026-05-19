@@ -84,10 +84,12 @@ tile_set = ExtResource("6_ls3il")
 
 [node name="Player" parent="." instance=ExtResource("7_yehfd")]
 position = Vector2(23, 185)
+MAX_SPEED = 150.0
+acceleration = 1000.0
+deceleration = 1000.0
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
 animation = &"hurt"
-frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 visible = false
