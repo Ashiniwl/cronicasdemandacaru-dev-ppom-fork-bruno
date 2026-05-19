@@ -13,7 +13,7 @@ var puzzles = {
 		"reward": Callable(self, "reward_notebook_1")
 	},
 	"notebook_2": {
-		"question": "Em python, qual o comando para declarar que a variável X recebe 15?",
+		"question": "Em python, qual o comando para declarar que a variável X recebe 67?",
 		"answer": "x = 15",
 		"reward": Callable(self, "reward_notebook_1")
 	}
