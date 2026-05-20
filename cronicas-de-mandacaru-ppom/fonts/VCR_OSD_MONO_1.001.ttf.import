@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ck253ora1fk1x"
-path="res://.godot/imported/ByteBounce.ttf-b143b7790217643a5bfe7a51d0d62291.fontdata"
+uid="uid://d0orxic2wpqm4"
+path="res://.godot/imported/VCR_OSD_MONO_1.001.ttf-92b798ad9789991a513c2da11fbc8ed7.fontdata"
 
 [deps]
 
-source_file="res://fonts/ByteBounce.ttf"
-dest_files=["res://.godot/imported/ByteBounce.ttf-b143b7790217643a5bfe7a51d0d62291.fontdata"]
+source_file="res://fonts/VCR_OSD_MONO_1.001.ttf"
+dest_files=["res://.godot/imported/VCR_OSD_MONO_1.001.ttf-92b798ad9789991a513c2da11fbc8ed7.fontdata"]
 
 [params]
 

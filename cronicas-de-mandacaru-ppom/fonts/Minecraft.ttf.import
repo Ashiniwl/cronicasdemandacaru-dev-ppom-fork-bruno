@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ck253ora1fk1x"
-path="res://.godot/imported/ByteBounce.ttf-b143b7790217643a5bfe7a51d0d62291.fontdata"
+uid="uid://u8787xpkrm4y"
+path="res://.godot/imported/Minecraft.ttf-e6722a4c8b9733825dcf3450454c3442.fontdata"
 
 [deps]
 
-source_file="res://fonts/ByteBounce.ttf"
-dest_files=["res://.godot/imported/ByteBounce.ttf-b143b7790217643a5bfe7a51d0d62291.fontdata"]
+source_file="res://fonts/Minecraft.ttf"
+dest_files=["res://.godot/imported/Minecraft.ttf-e6722a4c8b9733825dcf3450454c3442.fontdata"]
 
 [params]
 
