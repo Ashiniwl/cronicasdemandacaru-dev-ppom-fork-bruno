@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgux3yr2s64nn"]
+
+[ext_resource type="FontFile" uid="uid://dy33u1ryiv0sk" path="res://fonts/ByteBounce.ttf" id="1_qmhej"]
+
+[resource]
+default_font = ExtResource("1_qmhej")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 16
+Label/styles/focus = null
+Label/styles/normal = null
