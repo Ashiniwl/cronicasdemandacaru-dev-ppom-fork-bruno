@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c512w6vss5snx"]
+
+[ext_resource type="Theme" uid="uid://dansjc4v5110x" path="res://Themes/new_theme.tres" id="1_i3got"]
+[ext_resource type="Script" uid="uid://cr7lqny1ju0o0" path="res://pause_menu.gd" id="1_ur6gg"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ur6gg"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_52pyj"]
+events = [SubResource("InputEventAction_ur6gg")]
+
+[node name="Pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ur6gg")
+
+[node name="BG_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="continue_button" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_i3got")
+shortcut = SubResource("Shortcut_52pyj")
+text = "CONTINUAR"
+
+[node name="quit_button" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme = ExtResource("1_i3got")
+text = "SAIR"
+
+[connection signal="pressed" from="menu_holder/continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="menu_holder/quit_button" to="." method="_on_quit_button_pressed"]
