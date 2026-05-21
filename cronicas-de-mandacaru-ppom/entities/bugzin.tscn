@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://dljkwum6ebndc"]
+
+[ext_resource type="Script" uid="uid://tmrjmauc7naf" path="res://Script/npc.gd" id="1_slxoh"]
+[ext_resource type="Texture2D" uid="uid://b6f3rbam6d84w" path="res://Sprites/Bugzin/idle/dino_idle3.png" id="4_d61ma"]
+[ext_resource type="Theme" uid="uid://dansjc4v5110x" path="res://Themes/new_theme.tres" id="6_l64hl"]
+[ext_resource type="Texture2D" uid="uid://jv7w3ye7xafm" path="res://Sprites/Teclado/E.png" id="7_215dd"]
+[ext_resource type="Texture2D" uid="uid://c5xjrdihvkmao" path="res://Sprites/Teclado/E press.png" id="8_p5bpe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slxoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d61ma")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l64hl"]
+radius = 60.0
+height = 122.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upjdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_215dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p5bpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="bugzin" type="Node2D" groups=["npc"]]
+process_mode = 3
+script = ExtResource("1_slxoh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+sprite_frames = SubResource("SpriteFrames_slxoh")
+animation = &"idle"
+frame_progress = 0.774197
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_l64hl")
+
+[node name="InteractHint" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("6_l64hl")
+
+[node name="KeyHint" type="AnimatedSprite2D" parent="InteractHint"]
+position = Vector2(0, -20.000002)
+scale = Vector2(0.890625, 0.81250024)
+sprite_frames = SubResource("SpriteFrames_upjdb")
+autoplay = "default"
+frame_progress = 0.005479508
+
+[node name="DialogBubble" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -16.0
+offset_right = 41.0
+offset_bottom = 24.0
+theme = ExtResource("6_l64hl")
+
+[node name="Panel" type="Panel" parent="DialogBubble"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -63.0
+offset_right = 41.0
+offset_bottom = -2.0
+
+[node name="Label" type="Label" parent="DialogBubble/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 169
+
+[node name="KeyHint" type="AnimatedSprite2D" parent="DialogBubble/Panel"]
+position = Vector2(75, 34)
+scale = Vector2(0.5625, 0.5)
+sprite_frames = SubResource("SpriteFrames_upjdb")
+frame_progress = 0.7296158
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

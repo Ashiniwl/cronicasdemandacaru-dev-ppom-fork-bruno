@@ -239,6 +239,7 @@ size = Vector2(20, 28)
 size = Vector2(14, 18)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+process_mode = 3
 collision_layer = 2
 collision_mask = 9
 platform_on_leave = 2
@@ -246,6 +247,7 @@ script = ExtResource("1_merdl")
 metadata/_edit_horizontal_guides_ = [11.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 z_index = 2
 position = Vector2(0, -13)
 scale = Vector2(1.1692972, 1.0045136)

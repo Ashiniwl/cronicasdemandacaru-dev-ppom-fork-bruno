@@ -1,0 +1,163 @@
+extends Node2D
+
+var player_nearby = false
+var dialog_active = false
+var dialog_index = 0
+var post_puzzle = false
+var puzzle_done = false
+var puzzle_started = false
+
+#var dos textos
+var full_text = ""
+var current_text = ""
+var char_index = 0
+var typing = false
+var typing_speed = 0.05  # tempo entre cada letra em segundos
+var typing_timer = 0.0
+
+var dialogs_before = [
+	"Voce nao parece ser daqui...",
+	"VOCE DEVE SER O INVASOR!!!!!",
+	"Veremos se é esperto mesmo...",
+	"Sabe responder uma pergunta...",
+	"EM PYTHON!?"
+]
+
+var dialogs_after = [
+	"Voce é bom mesmo hein...",
+	"Me escute",
+	"Verá uma porta aberta a frente",
+	"Duvido que ganhe meu chefe!",
+	"Ops! Acho que falei demais."
+]
+
+var dialogs_repeat = [
+	"Xispa daqui",
+	"Se voce ir pra direita",
+	"Entre numa caverna",
+	"Deve estar aberta agora..."
+]
+var dialog_finished = false
+@onready var interact_hint = $InteractHint
+@onready var key_hint = $InteractHint/KeyHint
+@onready var dialog_bubble = $DialogBubble
+@onready var dialog_label = $DialogBubble/Panel/Label
+@onready var dialog_key_hint = $DialogBubble/Panel/KeyHint
+@onready var npc_sprite = $AnimatedSprite2D
+
+func _ready():
+	interact_hint.visible = false
+	dialog_bubble.visible = false
+
+
+func _physics_process(delta):
+	if typing:
+		typing_timer += delta
+		if typing_timer >= typing_speed:
+			typing_timer = 0.0
+			if char_index < full_text.length():
+				current_text += full_text[char_index]
+				dialog_label.text = current_text
+				char_index += 1
+			else:
+				typing = false  # terminou de escrever	
+func _process(_delta):
+	if player_nearby and not dialog_active:
+		if Input.is_action_just_pressed("interact"):
+			start_dialog()
+
+	elif dialog_active:
+		if Input.is_action_just_pressed("interact"):
+			advance_dialog()
+
+
+
+func start_dialog():
+	if dialog_finished:
+		post_puzzle = false
+		dialog_index = 0
+		dialog_active = true
+		interact_hint.visible = false
+		dialog_bubble.visible = true
+		show_dialog(dialogs_repeat[dialog_index])
+		return
+	dialog_active = true
+	dialog_index = 0
+	post_puzzle = false
+	interact_hint.visible = false
+	dialog_bubble.visible = true
+	get_tree().paused = true
+	npc_sprite.speed_scale = 1.0  # animação do NPC continua
+	show_dialog(dialogs_before[dialog_index])
+
+func advance_dialog():
+		if typing:
+			typing = false
+			dialog_label.text = full_text
+			return
+
+		dialog_index += 1
+		if dialog_finished:
+			if dialog_index >= dialogs_repeat.size():
+				end_dialog_repeat()  # ← fecha sem marcar finished de novo
+				return
+			show_dialog(dialogs_repeat[dialog_index])
+			return
+
+		if not post_puzzle:
+			if dialog_index >= dialogs_before.size():
+				dialog_bubble.visible = false
+				dialog_active = false
+				get_tree().paused = false
+				if not puzzle_started:
+					puzzle_started = true
+					Puzzle.start_puzzle("notebook_2")
+				return
+			show_dialog(dialogs_before[dialog_index])
+		else:
+			if dialog_index >= dialogs_after.size():
+				end_dialog()
+				return
+			show_dialog(dialogs_after[dialog_index])
+func show_dialog(text: String):
+	dialog_label.text = ""
+	full_text = text
+	current_text = ""
+	char_index = 0
+	typing_timer = 0.0
+	typing = true
+	
+
+func start_post_puzzle_dialog():
+	if puzzle_done:  # ← se já completou, não abre de novo
+		return
+	post_puzzle = true
+	dialog_index = 0
+	dialog_bubble.visible = true
+	dialog_active = true
+	show_dialog(dialogs_after[dialog_index])
+
+func end_dialog():
+	dialog_finished = true
+	dialog_bubble.visible = false
+	dialog_active = false
+	get_tree().paused = false
+
+func end_dialog_repeat():
+	dialog_bubble.visible = false
+	dialog_active = false
+	get_tree().paused = false
+
+
+func _on_area_2d_body_entered(body):
+	print("ENTROU: ", body.name)
+	if body.is_in_group("player"):
+		print("É O PLAYER!")
+		player_nearby = true
+		interact_hint.visible = true
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("player"):
+		player_nearby = false
+		if not dialog_active:
+			interact_hint.visible = false

@@ -29,7 +29,7 @@ var jump_count: float = 0
 var status = PlayerState
 @onready var reload_timer: Timer = $ReloadTimer
 var death_on_jump_counter: float = 0
-
+var blocked = false
 
 	
 func _ready() -> void:
@@ -53,6 +53,9 @@ func _set_health(value):
 	
 
 func _physics_process(delta: float) -> void:
+	if get_tree().paused or blocked:
+		$AnimatedSprite2D.play("idle")  # ← nome da sua animação idle
+		return
 	if Input.is_action_pressed("down"):
 		set_collision_mask_value(8, false)
 	else:
