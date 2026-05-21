@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://f7xpr004yul5"]
+
+[ext_resource type="Texture2D" uid="uid://be5ngfr2eudc6" path="res://Sprites/Teclado/Teclado.png" id="1_f851v"]
+[ext_resource type="Texture2D" uid="uid://l4ucwjyxpb2t" path="res://Sprites/Teclado/A.png" id="2_smnae"]
+[ext_resource type="Texture2D" uid="uid://b30pjgorsueup" path="res://Sprites/Teclado/A press.png" id="3_tqxf0"]
+[ext_resource type="Texture2D" uid="uid://bcswoosmmum8q" path="res://Sprites/Teclado/D.png" id="4_cbgm6"]
+[ext_resource type="Texture2D" uid="uid://cosoh84n0k26l" path="res://Sprites/Teclado/D press.png" id="5_hd3w2"]
+[ext_resource type="Texture2D" uid="uid://b86gxul4c8yys" path="res://Sprites/Teclado/S.png" id="6_bsp5b"]
+[ext_resource type="Texture2D" uid="uid://cd6aecdts4nye" path="res://Sprites/Teclado/S press.png" id="7_bmset"]
+[ext_resource type="Texture2D" uid="uid://c6mu06j7fd2j0" path="res://Sprites/Teclado/W.png" id="8_vmh2q"]
+[ext_resource type="Texture2D" uid="uid://bc2wlldal2ajx" path="res://Sprites/Teclado/W press.png" id="9_j0eu3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_smnae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tqxf0")
+}],
+"loop": false,
+"name": &"loop a",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2bti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cbgm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hd3w2")
+}],
+"loop": true,
+"name": &"loop d",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bsp5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bmset")
+}],
+"loop": true,
+"name": &"loop s",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flf07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vmh2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j0eu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="keyboard_instruction" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f851v")
+
+[node name="A - ANIM" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, 0)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+animation = &"loop a"
+
+[node name="D - ANIM" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d2bti")
+animation = &"loop d"
+
+[node name="S - ANIM" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, 0)
+sprite_frames = SubResource("SpriteFrames_ta5nu")
+animation = &"loop s"
+
+[node name="W - ANIM" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -18)
+sprite_frames = SubResource("SpriteFrames_flf07")

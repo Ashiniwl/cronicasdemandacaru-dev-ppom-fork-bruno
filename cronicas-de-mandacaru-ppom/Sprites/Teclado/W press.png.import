@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs42slvgbov8s"
-path="res://.godot/imported/Hobbit - jumpt10.png-2fee570e33f4162a839a1838aa25d6b3.ctex"
+uid="uid://bc2wlldal2ajx"
+path="res://.godot/imported/W press.png-4a1a3f402f1cbf40a04badc4976ee2f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HOBBIT/JUMP/Hobbit - jumpt10.png"
-dest_files=["res://.godot/imported/Hobbit - jumpt10.png-2fee570e33f4162a839a1838aa25d6b3.ctex"]
+source_file="res://Sprites/Teclado/W press.png"
+dest_files=["res://.godot/imported/W press.png-4a1a3f402f1cbf40a04badc4976ee2f8.ctex"]
 
 [params]
 
