@@ -4,23 +4,12 @@ extends Node
 
 func reward_notebook_1():
 	print("Player ganhou buff: +10 HP!")
-func reward_notebook_2():
-	print("Player completou o puzzle de variáveis!")
-
-
 
 
 var puzzles = {
 	"notebook_1": {
-		"question": "Print, um comando de saída!",
-		"slot_labels": [
-			"--> EU QUERO UM BLOCO QUE MOSTRE: Bruno",
-            "--> EU QUERO UM BLOCO QUE MOSTRE: Olá mundo!"
-		],
-		"blocks": [
-			'print("Bruno")',
-            'print("Olá mundo!")'
-		],
+		"question": "Em python, qual o comando para que a saída seja: Hello World!",
+		"answer": "print('Hello World!')",
 		"reward": Callable(self, "reward_notebook_1")
 	},
 	"notebook_2": {
@@ -36,15 +25,16 @@ func start_puzzle(puzzle_id: String):
 		return
 
 	var data = puzzles[puzzle_id]
-	Engine.time_scale = 0.0
+
+	Engine.time_scale = 0.0  # pausa o jogo
 
 	var ui = puzzle_ui_scene.instantiate()
 	get_tree().current_scene.add_child(ui)
+
 	ui.setup(
 		data.question,
-		data.slot_labels,
-		data.blocks,
+		data.answer,
 		func():
-			Engine.time_scale = 1.0
+			Engine.time_scale = 1.0  # despausa
 			data.reward.call()
 	)
