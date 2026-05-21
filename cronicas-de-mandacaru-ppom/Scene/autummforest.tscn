@@ -1,7 +1,6 @@
-[gd_scene load_steps=36 format=4 uid="uid://dbawvgnwitb47"]
+[gd_scene load_steps=28 format=4 uid="uid://dbawvgnwitb47"]
 
 [ext_resource type="PackedScene" uid="uid://tsvnbubb6bg4" path="res://entities/player.tscn" id="1_07h3t"]
-[ext_resource type="PackedScene" path="res://Scene/pause_menu.tscn" id="1_trrqi"]
 [ext_resource type="PackedScene" uid="uid://dtn1kb4yyw6ko" path="res://Scene/transition.tscn" id="1_u6jjf"]
 [ext_resource type="TileSet" uid="uid://dk1qfi3hmp7p8" path="res://Tiles/terrain.tres" id="2_o2q3j"]
 [ext_resource type="Texture2D" uid="uid://p4m7t722vyji" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="3_o2q3j"]
@@ -17,33 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cqhn0t2uo3cif" path="res://entities/broken_block.tscn" id="14_a2akr"]
 [ext_resource type="Texture2D" uid="uid://ck25if1p7jxut" path="res://Tile-sets/Terrain (16x16).png" id="14_y7xwd"]
 [ext_resource type="Texture2D" uid="uid://g6wp80oudo68" path="res://Tile-sets/cave-tileset.png" id="15_imobg"]
-[ext_resource type="Texture2D" uid="uid://c2bhvimt8x1ya" path="res://Sprites/Niede/Niede_idle.png" id="20_825so"]
-[ext_resource type="Texture2D" uid="uid://cn2wofaa0b2u" path="res://Sprites/Niede/Niede_idle2.png" id="21_imobg"]
-[ext_resource type="Texture2D" uid="uid://dgd8jog1wmkbq" path="res://Sprites/Niede/Niede_idle3.png" id="22_trrqi"]
-[ext_resource type="Texture2D" uid="uid://didbw8bklp8gk" path="res://Sprites/Bugzin/idle/dino_idle.png" id="34_uy3so"]
-[ext_resource type="Texture2D" uid="uid://da1cqueh18dll" path="res://Sprites/Bugzin/idle/dino_idle2.png" id="35_hbxem"]
-[ext_resource type="Texture2D" uid="uid://b6f3rbam6d84w" path="res://Sprites/Bugzin/idle/dino_idle3.png" id="36_q1547"]
-[ext_resource type="Texture2D" uid="uid://cqox1ny6skr6f" path="res://Sprites/Bugzin/idle/dino_idle4.png" id="37_r2jfe"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xu3j8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("34_uy3so")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_hbxem")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_q1547")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_r2jfe")
-}],
-"loop": true,
-"name": &"idle_bugzin",
-"speed": 6.0
-}]
+[ext_resource type="PackedScene" uid="uid://mcru88n4xcjf" path="res://entities/niede.tscn" id="18_xu3j8"]
+[ext_resource type="PackedScene" uid="uid://dljkwum6ebndc" path="res://entities/bugzin.tscn" id="24_trrqi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6jjf"]
 size = Vector2(25, 187)
@@ -325,50 +299,10 @@ size = Vector2(24.328644, 2501.3052)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tkwh"]
 size = Vector2(20, 215)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gqyhv"]
-animations = [{
-"frames": [{
-"duration": 0.91,
-"texture": ExtResource("20_825so")
-}, {
-"duration": 0.91,
-"texture": ExtResource("21_imobg")
-}, {
-"duration": 0.91,
-"texture": ExtResource("22_trrqi")
-}, {
-"duration": 0.91,
-"texture": ExtResource("20_825so")
-}],
-"loop": true,
-"name": &"Niede_idle",
-"speed": 7.0
-}]
-
 [node name="Forest" type="Node2D"]
 z_index = -1
 position = Vector2(-229, 3)
 metadata/_edit_vertical_guides_ = [491.0, 1062.0, 866.0]
-
-[node name="Pause_menu" parent="." instance=ExtResource("1_trrqi")]
-
-[node name="Bugzin" type="AnimatedSprite2D" parent="."]
-z_index = 2
-position = Vector2(1571, 161)
-scale = Vector2(1.6, 1.375)
-sprite_frames = SubResource("SpriteFrames_xu3j8")
-animation = &"idle_bugzin"
-autoplay = "idle_bugzin"
-frame_progress = 0.05460021
-
-[node name="Bugzin2" type="AnimatedSprite2D" parent="."]
-z_index = 2
-position = Vector2(45, -559.00006)
-scale = Vector2(1.6, 1.375)
-sprite_frames = SubResource("SpriteFrames_xu3j8")
-animation = &"idle_bugzin"
-autoplay = "idle_bugzin"
-frame_progress = 0.05460021
 
 [node name="Level End" parent="." instance=ExtResource("12_u6jjf")]
 
@@ -519,14 +453,30 @@ shape = SubResource("RectangleShape2D_a2akr")
 position = Vector2(-10, 100)
 shape = SubResource("RectangleShape2D_3tkwh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(198.99998, 160)
-scale = Vector2(1.095, 1.095)
-sprite_frames = SubResource("SpriteFrames_gqyhv")
-animation = &"Niede_idle"
-autoplay = "Niede_idle"
-frame_progress = 0.22313787
+[node name="bugzin" parent="." instance=ExtResource("24_trrqi")]
+position = Vector2(1651, 165)
+
+[node name="AnimatedSprite2D" parent="bugzin" index="0"]
+autoplay = "idle"
+
+[node name="Area2D" parent="bugzin" index="1"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Label" parent="bugzin/DialogBubble/Panel" index="0"]
+autowrap_trim_flags = 0
+justification_flags = 171
+
+[node name="KeyHint" parent="bugzin/DialogBubble/Panel" index="1"]
+process_mode = 3
+position = Vector2(73, 54)
+autoplay = "default"
+
+[node name="niede" parent="." instance=ExtResource("18_xu3j8")]
+position = Vector2(141, 165)
 
 [editable path="Level End"]
 [editable path="Player"]
 [editable path="Transition"]
+[editable path="bugzin"]
+[editable path="niede"]
