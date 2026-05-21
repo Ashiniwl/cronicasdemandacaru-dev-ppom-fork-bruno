@@ -24,17 +24,10 @@ var puzzles = {
 		"reward": Callable(self, "reward_notebook_1")
 	},
 	"notebook_2": {
-		"question": "Variáveis, caixas que guardam tudo!",
-		"slot_labels": [
-			"--> EU QUERO UM BLOCO EM QUE X RECEBE 15",
-			"--> EU QUERO UM BLOCO EM QUE X RECEBE: \"Bruno\""
-		],
-		"blocks": [
-			'X = 15',
-			'X = \"Bruno\"'
-		],
-		 "reward": Callable(self, "reward_notebook_2")  # ← faltou isso
-}
+		"question": "Em python, qual o comando para declarar que a variável X recebe 67?",
+		"answer": "x = 15",
+		"reward": Callable(self, "reward_notebook_1")
+	}
 }
 
 func start_puzzle(puzzle_id: String):
