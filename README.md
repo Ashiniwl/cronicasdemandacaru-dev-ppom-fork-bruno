@@ -91,5 +91,5 @@ Este projeto é licenciado sob a **MIT License**. Veja [`LICENSE`](cronicas-de-m
 ---
 
 <p align="center">
-  Feito com 💚 e orgulho nordestino 🌵
+  Feito com orgulho nordestino 🌵
 </p>
