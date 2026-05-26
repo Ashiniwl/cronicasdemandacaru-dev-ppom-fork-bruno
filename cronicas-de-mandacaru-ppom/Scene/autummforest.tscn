@@ -1,7 +1,7 @@
 
 [gd_scene load_steps=33 format=4 uid="uid://dbawvgnwitb47"]
 
-[gd_scene load_steps=24 format=4 uid="uid://dbawvgnwitb47"]
+
 
 
 [ext_resource type="PackedScene" uid="uid://tsvnbubb6bg4" path="res://entities/player.tscn" id="1_07h3t"]
