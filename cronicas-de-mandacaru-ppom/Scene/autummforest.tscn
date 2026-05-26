@@ -1,13 +1,16 @@
+
 [gd_scene load_steps=33 format=4 uid="uid://dbawvgnwitb47"]
+
+[gd_scene load_steps=24 format=4 uid="uid://dbawvgnwitb47"]
+
 
 [ext_resource type="PackedScene" uid="uid://tsvnbubb6bg4" path="res://entities/player.tscn" id="1_07h3t"]
 [ext_resource type="PackedScene" uid="uid://dtn1kb4yyw6ko" path="res://Scene/transition.tscn" id="1_u6jjf"]
 [ext_resource type="TileSet" uid="uid://dk1qfi3hmp7p8" path="res://Tiles/terrain.tres" id="2_o2q3j"]
-[ext_resource type="Texture2D" uid="uid://p4m7t722vyji" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="3_o2q3j"]
-[ext_resource type="Texture2D" uid="uid://rggkuuhbvqvr" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="4_wxqtn"]
-[ext_resource type="Texture2D" uid="uid://b3uwjmgb48ts5" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="5_ffbcr"]
-[ext_resource type="Texture2D" uid="uid://cbkgwpd8luw1m" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_0ca2o"]
-[ext_resource type="Texture2D" uid="uid://doec01stk8ge7" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_p1i8u"]
+[ext_resource type="Texture2D" uid="uid://ugmo23gjy5io" path="res://Sprites/BACKGROUNDS/Main Background/Plan 5.png" id="3_xu3j8"]
+[ext_resource type="Texture2D" uid="uid://ctod68lu7jiru" path="res://Sprites/BACKGROUNDS/Main Background/Plan 4.png" id="4_y7xwd"]
+[ext_resource type="Texture2D" uid="uid://b4che6i4navgq" path="res://Sprites/BACKGROUNDS/Main Background/Plan 3.png" id="5_d813l"]
+[ext_resource type="Texture2D" uid="uid://dncqowl1fuvm3" path="res://Sprites/BACKGROUNDS/Main Background/Plan 1.png" id="6_a6fvn"]
 [ext_resource type="PackedScene" uid="uid://bf72x7xnrbxik" path="res://entities/camera.tscn" id="9_0ca2o"]
 [ext_resource type="Script" uid="uid://bgrldfbto0bat" path="res://fake_terration_detect.gd" id="9_a6fvn"]
 [ext_resource type="Texture2D" uid="uid://btsu22rcqlpi4" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="10_p1i8u"]
@@ -16,10 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://cw0i3lly6kgjh" path="res://entities/level_end.tscn" id="12_u6jjf"]
 [ext_resource type="Texture2D" uid="uid://uq5db3hr47jo" path="res://Sprites/Seasonal Tilesets/4 - Misc. universal tiles/Lava_frames (16 x 32).png" id="13_3tkwh"]
 [ext_resource type="PackedScene" uid="uid://cqhn0t2uo3cif" path="res://entities/broken_block.tscn" id="14_a2akr"]
-[ext_resource type="Texture2D" uid="uid://ck25if1p7jxut" path="res://Tile-sets/Terrain (16x16).png" id="14_y7xwd"]
-[ext_resource type="Texture2D" uid="uid://g6wp80oudo68" path="res://Tile-sets/cave-tileset.png" id="15_imobg"]
+[ext_resource type="PackedScene" uid="uid://cj655tmrv5p38" path="res://Scene/paper.tscn" id="16_axc31"]
+[ext_resource type="PackedScene" uid="uid://ced5qoogafj14" path="res://Scene/reference_screen.tscn" id="17_em8ll"]
 [ext_resource type="PackedScene" uid="uid://mcru88n4xcjf" path="res://entities/niede.tscn" id="18_xu3j8"]
-[ext_resource type="Script" uid="uid://bljswrtq6jcxo" path="res://cave_zone.gd" id="19_y7xwd"]
+[ext_resource type="Script" uid="uid://bljswrtq6jcxo" path="res://Script/cave_zone.gd" id="19_y7xwd"]
 [ext_resource type="PackedScene" uid="uid://dljkwum6ebndc" path="res://entities/bugzin.tscn" id="24_trrqi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6jjf"]
@@ -333,86 +336,52 @@ position = Vector2(1, -11.660004)
 [node name="CollisionShape2D" parent="Player/HITBOX" index="0"]
 position = Vector2(146, -11.660004)
 
-[node name="Parallax2D 6" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(288, 0)
-repeat_times = 10
-
-[node name="6" type="Sprite2D" parent="Parallax2D 6"]
-z_index = -1
-z_as_relative = false
-texture_repeat = 2
-position = Vector2(0, -169)
-scale = Vector2(1, 1.8125)
-texture = ExtResource("3_o2q3j")
-centered = false
-offset = Vector2(0.1, 0)
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
-
-[node name="Parallax2D 5" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(288, 0)
-repeat_times = 10
-
-[node name="5" type="Sprite2D" parent="Parallax2D 5"]
-z_index = -1
-z_as_relative = false
-texture_repeat = 2
-position = Vector2(0, -171)
-scale = Vector2(1, 1.8221154)
-texture = ExtResource("4_wxqtn")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
-
 [node name="Parallax2D 4" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.3, 0.3)
-repeat_size = Vector2(288, 0)
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(576, 0)
 repeat_times = 10
 
-[node name="4" type="Sprite2D" parent="Parallax2D 4"]
-z_index = -1
-z_as_relative = false
-texture_repeat = 2
-position = Vector2(0, -166)
-scale = Vector2(1, 1.7980769)
-texture = ExtResource("5_ffbcr")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
+[node name="4" type="TextureRect" parent="Parallax2D 4"]
+offset_right = 2000.0
+offset_bottom = 324.0
+texture = ExtResource("3_xu3j8")
+stretch_mode = 1
 
 [node name="Parallax2D 3" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.4, 0.4)
-repeat_size = Vector2(288, 0)
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(576, 0)
 repeat_times = 10
 
-[node name="3" type="Sprite2D" parent="Parallax2D 3"]
-z_index = -1
-z_as_relative = false
-texture_repeat = 2
-position = Vector2(0, -169)
-scale = Vector2(1, 1.8125)
-texture = ExtResource("6_0ca2o")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
+[node name="3" type="TextureRect" parent="Parallax2D 3"]
+offset_right = 2000.0
+offset_bottom = 324.0
+texture = ExtResource("4_y7xwd")
+stretch_mode = 1
 
 [node name="Parallax2D 2" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(288, 0)
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(576, 0)
 repeat_times = 10
 
-[node name="2" type="Sprite2D" parent="Parallax2D 2"]
-z_index = -1
-z_as_relative = false
-texture_repeat = 2
-position = Vector2(0, -207.99998)
-scale = Vector2(1, 2)
-texture = ExtResource("7_p1i8u")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
+[node name="2" type="TextureRect" parent="Parallax2D 2"]
+offset_left = -170.0
+offset_right = 1830.0
+offset_bottom = 324.0
+texture = ExtResource("5_d813l")
+stretch_mode = 1
+
+[node name="Parallax2D 1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(576, 0)
+repeat_times = 10
+
+[node name="1" type="TextureRect" parent="Parallax2D 1"]
+offset_left = 13.0
+offset_top = -92.0
+offset_right = 2013.0
+offset_bottom = 232.0
+texture = ExtResource("6_a6fvn")
+stretch_mode = 1
 
 [node name="Camera" parent="." groups=["camera"] instance=ExtResource("9_0ca2o")]
 position = Vector2(23, 170)
@@ -520,7 +489,13 @@ position = Vector2(73, 54)
 autoplay = "default"
 
 [node name="niede" parent="." instance=ExtResource("18_xu3j8")]
-position = Vector2(141, 165)
+position = Vector2(138, 160)
+
+[node name="AnimatedSprite2D" parent="niede" index="0"]
+frame_progress = 0.7212832
+
+[node name="KeyHint" parent="niede/InteractHint" index="0"]
+position = Vector2(0, -24.000002)
 
 [node name="Cave_zone" type="Area2D" parent="."]
 position = Vector2(1412, -319)
@@ -541,8 +516,29 @@ scroll_offset = Vector2(43, -6)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxCaverna"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="BackgroundLayer" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_right = 1600.0
+offset_bottom = 3792.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7529412, 0.8509804, 0.92941177, 1)
+
+[node name="paper" parent="." instance=ExtResource("16_axc31")]
+position = Vector2(204.00003, 165)
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("17_em8ll")]
+
 [editable path="Level End"]
 [editable path="Player"]
 [editable path="Transition"]
 [editable path="bugzin"]
 [editable path="niede"]
+[editable path="CanvasLayer2"]
