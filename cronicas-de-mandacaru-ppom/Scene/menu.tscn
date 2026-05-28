@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceurjiyfeljuy"]
+[gd_scene load_steps=9 format=3 uid="uid://ceurjiyfeljuy"]
 
 [ext_resource type="Script" uid="uid://bncnklakyl3hv" path="res://Script/menu.gd" id="1_eas8t"]
 [ext_resource type="Texture2D" uid="uid://6q1o24nytfbo" path="res://images/WhatsApp Image 2026-05-27 at 19.48.40.jpeg" id="2_ffxp3"]
 [ext_resource type="FontFile" uid="uid://cg7nmsrpxuvmx" path="res://fonts/determination.ttf" id="2_u2k45"]
+[ext_resource type="AudioStream" uid="uid://conbn8dvysn6b" path="res://SFX/Nascence - Austin Wintory.mp3" id="6_6hgn1"]
 [ext_resource type="Texture2D" uid="uid://cqmx2wjb757nt" path="res://Sprites/BACKGROUNDS/logo.png" id="37_xv7ii"]
 [ext_resource type="PackedScene" uid="uid://dqofr4iqw8kuv" path="res://Scene/opções_menu.tscn" id="38_xv7ii"]
 
@@ -88,3 +89,9 @@ expand_mode = 3
 [node name="Opções_menu" parent="." instance=ExtResource("38_xv7ii")]
 visible = false
 layout_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6hgn1")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"

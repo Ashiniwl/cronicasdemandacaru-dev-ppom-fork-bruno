@@ -3,6 +3,7 @@ extends Control
 @onready var slider_musica = $VBoxContainer/HBoxContainer/HSlider
 @onready var slider_efeitos = $VBoxContainer/HBoxContainer2/HSlider
 @onready var check_mutar = $VBoxContainer/HBoxContainer4/CheckButton
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 
 func _ready():
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -21,7 +22,6 @@ func _on_mutar_toggled(ativado):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), ativado)
 
 func _on_voltar():
-	print("VOLTAR CLICADO")
+	print("funciona")
 	print("parent: ", get_parent().name)
 	visible = false
-	get_parent().find_child("menu_holder").visible = true

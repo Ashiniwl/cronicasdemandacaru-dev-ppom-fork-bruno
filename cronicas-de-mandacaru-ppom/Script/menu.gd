@@ -1,26 +1,23 @@
 extends Control
-
 var posicoes_originais = {}
 
 func iniciar():
 	var botoes = [
 		$VBoxContainer/HBoxContainer/VBoxContainer/Play,
-		$VBoxContainer/HBoxContainer/VBoxContainer/Options,
+		$VBoxContainer/HBoxContainer/VBoxContainer/Menu,
 		$VBoxContainer/HBoxContainer/VBoxContainer/Sair
 	]
-	
 	for botao in botoes:
 		posicoes_originais[botao] = botao.position
 		botao.position.x -= 600
-	
 	var delay = 0.0
 	for botao in botoes:
 		var tween = create_tween()
 		tween.tween_interval(delay)
 		tween.tween_property(botao, "position:x",
-							 posicoes_originais[botao].x, 0.5)\
-			 .set_ease(Tween.EASE_OUT)\
-			 .set_trans(Tween.TRANS_BACK)
+							posicoes_originais[botao].x, 0.5)\
+			.set_ease(Tween.EASE_OUT)\
+			.set_trans(Tween.TRANS_BACK)
 		delay += 0.15
 
 func _read():
@@ -37,7 +34,7 @@ func on_button_pressed(button: Button) -> void:
 	match button.name:
 		"Play":
 			get_tree().change_scene_to_file("res://Scene/cutscene.tscn")
-		"Options":
+		"Menu":
 			$"Opções_menu".visible = true
 		"Sair":
 			get_tree().quit()
