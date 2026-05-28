@@ -21,7 +21,8 @@ Um jogo educativo e acessível, desenvolvido em **Godot 4**, focado em ensinar *
 
 ## Sobre o projeto
 
-**Crônicas de Mandacaru** é um jogo intuitivo com foco em **acessibilidade e inclusão** para pessoas com Transtorno do Espectro Autista (TEA). Por meio de uma experiência lúdica e ambientada no sertão nordestino, o jogo ensina conceitos de **lógica de programação integrada ao Python** de forma visual, interativa e adaptada às necessidades desses indivíduos.
+**Crônicas de Mandacaru** é um jogo educacional desenvolvido com foco em acessibilidade e inclusão para pessoas com Transtorno do Espectro Autista (TEA). Ambientado no sertão nordestino, o projeto utiliza uma abordagem lúdica, visual e interativa para ensinar conceitos de lógica de programação integrados à linguagem Python, proporcionando uma experiência adaptada às necessidades e diferentes formas de aprendizagem dos usuários.
+
 
 ### Objetivos
 
