@@ -35,7 +35,7 @@ func _physics_process(_delta):
 		if puzzle_screen.modulate.a <= 0:
 			puzzle_screen.modulate.a = 0
 			queue_free()
-func setup(question: String, answers: Array, blocks: Array, callback: Callable):
+func setup(question: String, answers: Array, blocks: Array, reference_id: String, callback: Callable):
 	callback_when_done = callback
 	question_label.text = question
 
@@ -52,6 +52,10 @@ func setup(question: String, answers: Array, blocks: Array, callback: Callable):
 	
 	bloco1.get_node("Label").text = blocks[0]
 	bloco2.get_node("Label").text = blocks[1]
+
+	var ref_screen = get_tree().get_first_node_in_group("reference_screen")
+	if ref_screen:
+		ref_screen.current_id = reference_id
 
 	error_label.visible = false
 	_update_button()
@@ -128,7 +132,7 @@ func hide_bloco(block_text: String):
 
 func _open_reference():
 	var ref_screen = get_tree().get_first_node_in_group("reference_screen")
-	ref_screen.open("dica_2")
+	ref_screen.open("dica_1")
 func fade_in():
 	var tw = create_tween()
 	tw.tween_property(puzzle_screen, "modulate:a", 0.8, 0.7)

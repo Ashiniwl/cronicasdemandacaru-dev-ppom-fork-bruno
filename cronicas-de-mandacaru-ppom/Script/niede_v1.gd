@@ -13,19 +13,15 @@ var typing_speed = 0.05
 var typing_timer = 0.0
 
 var dialogs = [
-	"Olá!",
-	"Eu sou Niéde Guidon",
-	"Aqui é um lugar perigoso!",
-	"Se planeja avancar",
-	"Conte comigo!",
-	"A frente tem uma caverna",
-	"Só que ela está bloqueada",
-	"Se voce encontrar um dinossauro, talvez ele consiga abrir",
-	"Enfim, te encontro lá na entrada!"
+	"Esta é a parte aberta da Serra",
+	"Vou ir na sua frente",
+	"Se avistar alguma plataforma",
+	"Suba nelas, acho que é pra lá que...",
+	"Estao os dinossauros..."
 ]
 
 var dialogs_repeat = [
-	"Me encontre lá na caverna",
+	"Me encontre subindo as plataformas",
     "Acho que vou ter novas pistas..."
 ]
 

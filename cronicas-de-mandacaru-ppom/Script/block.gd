@@ -1,6 +1,6 @@
 extends Panel
 
-func _get_drag_data(at_position: Vector2):
+func _get_drag_data(_at_position: Vector2):
 	var preview = Panel.new()
 	preview.custom_minimum_size = Vector2(120, 40)
 	preview.size = Vector2(120, 40)

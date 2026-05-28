@@ -13,6 +13,8 @@ const SCENE_DATA = [
 @onready var animator = $AnimationPlayer
 @onready var fade_screen = $FadeScreen
 @onready var musica = $AudioStreamPlayer2D
+@onready var skip_button = $SkipButton
+var skipped = false
 
 const SCENE_MIN_TIME = 5.0
 const TYPEWRITER_SPEED = 0.07
@@ -42,7 +44,14 @@ func show_text_typewriter(text_to_show: String) -> float:
 func _ready():
 	fade_screen.modulate.a = 0.0
 	musica.play()
+	skip_button.pressed.connect(_skip_cutscene)
 	start_cutscene()
+	
+func _skip_cutscene():
+	if skipped:
+		return
+	skipped = true
+	end_cutscene()	
 
 func start_cutscene():
 	var scene = SCENE_DATA[0]
@@ -67,5 +76,5 @@ func start_cutscene():
 func end_cutscene():
 	musica.stop()
 	print("Cutscene Terminada! Carregando o jogo...")
-	var next_scene = load("res://Scene/fase1.tscn")
+	var next_scene = load("res://Scene/tutorial.tscn")
 	get_tree().change_scene_to_packed(next_scene)

@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var hitbox_colision: CollisionShape2D = $HITBOX/CollisionShape2D
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var jumpSFX = $jumpSFX as AudioStreamPlayer2D
-@onready var stepSFX = $stepSFX as AudioStreamPlayer2D
 const GameOverScreen = preload("uid://r32ycnp1u604")
 
 var health: int = 6:
@@ -34,7 +33,7 @@ var death_on_jump_counter: float = 0
 var blocked = false
 
 func _ready() -> void:
-	health = 5000
+	health = 5
 	go_to_idle_state()
 	healthbar.ini_health(health)
 	anim.connect("frame_changed", Callable(self, "_on_anim_frame_changed"))
@@ -100,6 +99,9 @@ func go_to_dead_state():
 	status = PlayerState.dead
 	anim.play("dead")
 	velocity.x = 0
+	velocity.y = 0
+	blocked = true
+	visible = false  # ← some na hora
 	game_over_screen_ref = GameOverScreen.instantiate()
 	get_tree().get_root().add_child(game_over_screen_ref)
 	reload_timer.start()
@@ -116,7 +118,6 @@ func go_to_hurt_state():
 	hurt_cooldown = true
 	health -= 1
 	status = PlayerState.hurt
-	anim.play("hurt")
 	velocity.y = -200
 	
 	modulate = Color(1, 1, 1, 1)
