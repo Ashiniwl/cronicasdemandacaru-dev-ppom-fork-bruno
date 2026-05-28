@@ -1,36 +1,56 @@
 extends Control
-
-@onready var bt_play = $TextureButton
-@onready var bt_opcoes = $TextureButton2
-@onready var bt_sair = $TextureButton3
-
 var posicoes_originais = {}
 
-func _ready():
-	bt_play.pressed.connect(_on_play)
-	bt_opcoes.pressed.connect(_on_opcoes)
-	bt_sair.pressed.connect(_on_sair)
-	
-	for bt in [bt_play, bt_opcoes, bt_sair]:
-		posicoes_originais[bt] = bt.position
-		bt.mouse_entered.connect(_on_hover.bind(bt))
-		bt.mouse_exited.connect(_on_unhover.bind(bt))
+func iniciar():
+	var botoes = [
+		$VBoxContainer/HBoxContainer/VBoxContainer/Play,
+		$VBoxContainer/HBoxContainer/VBoxContainer/Menu,
+		$VBoxContainer/HBoxContainer/VBoxContainer/Sair
+	]
+	for botao in botoes:
+		posicoes_originais[botao] = botao.position
+		botao.position.x -= 600
+	var delay = 0.0
+	for botao in botoes:
+		var tween = create_tween()
+		tween.tween_interval(delay)
+		tween.tween_property(botao, "position:x",
+							posicoes_originais[botao].x, 0.5)\
+			.set_ease(Tween.EASE_OUT)\
+			.set_trans(Tween.TRANS_BACK)
+		delay += 0.15
 
-func _on_hover(bt):
-	var tween = create_tween().set_parallel(true)
-	tween.tween_property(bt, "scale", Vector2(0.37, 0.37), 0.15)
-	tween.tween_property(bt, "position", posicoes_originais[bt] + Vector2(-3, 0), 0.15)
+func _read():
+	iniciar()
 
-func _on_unhover(bt):
-	var tween = create_tween().set_parallel(true)
-	tween.tween_property(bt, "scale", Vector2(0.35, 0.35), 0.15)
-	tween.tween_property(bt, "position", posicoes_originais[bt], 0.15)
+func _ready() -> void:
+	$"Opções_menu".visible = false
+	for button in get_tree().get_nodes_in_group("button"):
+		button.connect("pressed", Callable(self, "on_button_pressed").bind(button))
+		button.connect("mouse_entered", Callable(self, "mouse_interaction").bind(button, "entered"))
+		button.connect("mouse_exited", Callable(self, "mouse_interaction").bind(button, "exited"))
 
-func _on_play():
-	get_tree().change_scene_to_file("res://Scene/cutscene.tscn")
+func on_button_pressed(button: Button) -> void:
+	match button.name:
+		"Play":
+			get_tree().change_scene_to_file("res://Scene/cutscene.tscn")
+		"Menu":
+			$"Opções_menu".visible = true
+		"Sair":
+			get_tree().quit()
 
-func _on_opcoes():
-	get_tree().change_scene_to_file("res://Scene/menu_opcs.tscn")
+func mouse_interaction(button: Button, state: String) -> void:
+	match state:
+		"exited":
+			button.modulate.a = 1.0
+		"entered":
+			button.modulate.a = 0.5
 
-func _on_sair():
-	get_tree().quit()
+func _on_musica_changed(valor):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), valor)
+
+func _on_efeitos_changed(valor):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), valor)
+
+func _on_mutar_toggled(ativado):
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), ativado)

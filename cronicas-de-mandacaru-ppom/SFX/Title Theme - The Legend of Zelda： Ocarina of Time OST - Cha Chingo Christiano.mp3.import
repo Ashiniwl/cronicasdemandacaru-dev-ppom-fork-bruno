@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cykqfaqitkgvd"
+path="res://.godot/imported/Title Theme - The Legend of Zelda： Ocarina of Time OST - Cha Chingo Christiano.mp3-c28497765d2e309e47345bc7d48d2e3b.mp3str"
+
+[deps]
+
+source_file="res://SFX/Title Theme - The Legend of Zelda： Ocarina of Time OST - Cha Chingo Christiano.mp3"
+dest_files=["res://.godot/imported/Title Theme - The Legend of Zelda： Ocarina of Time OST - Cha Chingo Christiano.mp3-c28497765d2e309e47345bc7d48d2e3b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

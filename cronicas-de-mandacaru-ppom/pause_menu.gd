@@ -1,29 +1,35 @@
 extends CanvasLayer
 
 @onready var continue_button = $menu_holder/continue_button
-@onready var opcoes_button = $menu_holder/opcoes_button
+@onready var opcoes = $Opções_menu
 
-func _ready():
+func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	hide()
-	
-	continue_button.pressed.connect(_on_continuar)
-	opcoes_button.pressed.connect(_on_opcoes)
+	visible = false
+	opcoes.visible = false
 
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_Q:
-		if visible:
-			_on_continuar()
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if opcoes.visible:
+			opcoes.visible = false
+			$menu_holder.visible = true
+		elif visible:
+			visible = false
+			get_tree().set_deferred("paused", false)
 		else:
-			_abrir()
+			visible = true
+			$menu_holder.visible = true
+			opcoes.visible = false
+			get_tree().set_deferred("paused", true)
+			continue_button.grab_focus()
 
-func _abrir():
-	show()
-	get_tree().paused = true
+func _on_continue_button_pressed() -> void:
+	visible = false
+	get_tree().set_deferred("paused", false)
 
-func _on_continuar():
-	hide()
-	get_tree().paused = false
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
 
-func _on_opcoes():
-	get_tree().change_scene_to_file("res://Scene/menu_opcs.tscn")
+func _on_menu_button_pressed() -> void:
+	$menu_holder.visible = false
+	opcoes.visible = true

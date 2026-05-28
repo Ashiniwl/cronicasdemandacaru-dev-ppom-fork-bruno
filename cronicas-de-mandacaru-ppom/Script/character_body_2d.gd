@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hitbox_colision: CollisionShape2D = $HITBOX/CollisionShape2D
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var jumpSFX = $jumpSFX as AudioStreamPlayer2D
+@onready var stepSFX = $stepSFX as AudioStreamPlayer2D
 const GameOverScreen = preload("uid://r32ycnp1u604")
 
 var health: int = 6:

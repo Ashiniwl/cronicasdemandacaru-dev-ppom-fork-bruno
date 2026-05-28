@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceurjiyfeljuy"]
+[gd_scene load_steps=9 format=3 uid="uid://ceurjiyfeljuy"]
 
 [ext_resource type="Script" uid="uid://bncnklakyl3hv" path="res://Script/menu.gd" id="1_eas8t"]
-[ext_resource type="Texture2D" uid="uid://b3dkq623w0f6a" path="res://Sprites/BACKGROUNDS/fundos.jpeg" id="2_6hgn1"]
-[ext_resource type="Texture2D" uid="uid://r15h4bd6nyo0" path="res://Sprites/botões/bt_play.png" id="4_fyf5i"]
-[ext_resource type="Texture2D" uid="uid://dpialfh6qfyxo" path="res://Sprites/botões/bt_opcs.png" id="5_k52wo"]
-[ext_resource type="Texture2D" uid="uid://bpnupsuqa4dgn" path="res://Sprites/botões/bt_sair.png" id="6_ddci3"]
+[ext_resource type="Texture2D" uid="uid://6q1o24nytfbo" path="res://images/WhatsApp Image 2026-05-27 at 19.48.40.jpeg" id="2_ffxp3"]
+[ext_resource type="FontFile" uid="uid://cg7nmsrpxuvmx" path="res://fonts/determination.ttf" id="2_u2k45"]
+[ext_resource type="AudioStream" uid="uid://conbn8dvysn6b" path="res://SFX/Nascence - Austin Wintory.mp3" id="6_6hgn1"]
 [ext_resource type="Texture2D" uid="uid://cqmx2wjb757nt" path="res://Sprites/BACKGROUNDS/logo.png" id="37_xv7ii"]
+[ext_resource type="PackedScene" uid="uid://dqofr4iqw8kuv" path="res://Scene/opções_menu.tscn" id="38_xv7ii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x646"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45on0"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,9 +27,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6hgn1")
+texture = ExtResource("2_ffxp3")
 expand_mode = 3
 stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.375
+anchor_right = 0.485
+anchor_bottom = 0.375
+offset_right = 256.0
+offset_bottom = 132.0
+mouse_filter = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Play" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u2k45")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7x646")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_45on0")
+text = "PLAY"
+flat = true
+
+[node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u2k45")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7x646")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_45on0")
+text = "MENU"
+flat = true
+
+[node name="Sair" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u2k45")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7x646")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_45on0")
+text = "SAIR"
+flat = true
 
 [node name="logo" type="TextureRect" parent="."]
 layout_mode = 0
@@ -36,29 +86,12 @@ offset_bottom = 74.0
 texture = ExtResource("37_xv7ii")
 expand_mode = 3
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 278.00003
-offset_top = 81.0
-offset_right = 534.0
-offset_bottom = 145.0
-scale = Vector2(0.35, 0.35)
-texture_normal = ExtResource("4_fyf5i")
+[node name="Opções_menu" parent="." instance=ExtResource("38_xv7ii")]
+visible = false
+layout_mode = 1
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 118.0
-offset_right = 534.0
-offset_bottom = 182.0
-scale = Vector2(0.35, 0.35)
-texture_normal = ExtResource("5_k52wo")
-
-[node name="TextureButton3" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 154.0
-offset_right = 534.0
-offset_bottom = 218.0
-scale = Vector2(0.35, 0.35)
-texture_normal = ExtResource("6_ddci3")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6hgn1")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
