@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqofr4iqw8kuv"]
+
+[ext_resource type="Script" uid="uid://b5182dq416nto" path="res://opções_menu.gd" id="1_o6ocu"]
+
+[node name="Opções_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o6ocu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.2901961, 0.11764706, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPÇÕES"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Audio"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Musica"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(270, 30)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Efeitos Sonoros"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(270, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Mutar"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_voltar"]
