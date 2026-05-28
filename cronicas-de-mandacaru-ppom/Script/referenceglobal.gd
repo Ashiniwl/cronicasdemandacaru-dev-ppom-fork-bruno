@@ -1,37 +1,33 @@
 extends Node
 
-# Dicionário com todo o conteúdo de referência
+# ─── FLAGS DE ITENS COLETADOS ──────────────────────────────────────────────────
 
 var collected_items = {
-	"notebook_1_paper": false,  # o papel do puzzle 1
-	"notebook_2_paper": false,
+	"notebook_1_paper": false,   # papel do puzzle da fase principal
+	"tutorial_niede_paper": false # papel do puzzle da Niede no tutorial
 }
+
+# ─── CONTEÚDO DE REFERÊNCIA ────────────────────────────────────────────────────
 
 var references = {
 	"variaveis": {
 		"title": "Variáveis",
 		"content": """Uma variável é um espaço na memória para guardar um valor.
 
-Exemplos em GDScript:
+Exemplos:
 
   var nome = "João"
   var idade = 25
   var ativo = true
 
 Tipos comuns:
-  • int   → números inteiros (1, 2, 42)
-  • float → números decimais (3.14)
-  • String → texto ("olá")
-  • bool  → verdadeiro/falso"""
+  • int    → números inteiros  (1, 2, 42)
+  • float  → números decimais  (3.14)
+  • String → texto             ("olá")
+  • bool   → verdadeiro/falso  (true/false)"""
 	},
-	"funcoes": {
-		"title": "Funções",
-		"content": """Funções são blocos de código reutilizáveis.
-
-  func somar(a, b):
-      return a + b
-
-  var resultado = somar(3, 4)  # → 7"""
-	},
-	# Adicione quantas quiser...
+	"pinturas": {
+		"title": "Pinturas Rupestres",
+		"content": "Pinturas rupestres são desenhos feitos nas rochas por povos antigos"
+	}
 }

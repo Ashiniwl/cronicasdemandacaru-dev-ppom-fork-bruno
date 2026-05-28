@@ -2,7 +2,7 @@ extends ColorRect
 
 @onready var block_label = $Label
 
-func _can_drop_data(at_position: Vector2, data) -> bool:
+func _can_drop_data(_at_position: Vector2, data) -> bool:
 	print("CAN DROP CHAMADO!") 
 	print("Parent: ", get_parent())
 	print("Parent.Parent: ", get_parent().get_parent())
@@ -10,7 +10,7 @@ func _can_drop_data(at_position: Vector2, data) -> bool:
 	return data is String and get_parent().get_parent().current_block == ""
 
 
-func _drop_data(at_position: Vector2, data):
+func _drop_data(_at_position: Vector2, data):
 	print("DROP CHAMADO!")
 	print("Dados: ", data)
 	block_label.text = data
