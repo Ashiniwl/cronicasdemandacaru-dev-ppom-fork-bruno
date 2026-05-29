@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://boye3up5msv5"]
+[gd_scene load_steps=20 format=4 uid="uid://boye3up5msv5"]
 
 [ext_resource type="PackedScene" uid="uid://bf72x7xnrbxik" path="res://entities/camera.tscn" id="1_b53jw"]
-[ext_resource type="PackedScene" uid="uid://qjcttsdnvmqe" path="res://niede_puzzle.tscn" id="1_r3him"]
+[ext_resource type="PackedScene" path="res://niede_puzzle.tscn" id="1_r3him"]
 [ext_resource type="PackedScene" uid="uid://tsvnbubb6bg4" path="res://entities/player.tscn" id="2_4cpsy"]
 [ext_resource type="TileSet" uid="uid://dk1qfi3hmp7p8" path="res://Tiles/terrain.tres" id="3_qwkqa"]
 [ext_resource type="TileSet" uid="uid://bu2o7rwp824ui" path="res://Tiles/decoration.tres" id="4_aqehm"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://ck253ora1fk1x" path="res://fonts/ByteBounce.ttf" id="10_1n71j"]
 [ext_resource type="PackedScene" uid="uid://cj655tmrv5p38" path="res://Scene/paper.tscn" id="10_64kyw"]
 [ext_resource type="PackedScene" uid="uid://ced5qoogafj14" path="res://Scene/reference_screen.tscn" id="11_veuv8"]
+[ext_resource type="Texture2D" uid="uid://i2rj6y4otq6j" path="res://dicas/pinturas.png" id="13_mvu6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqehm"]
 size = Vector2(256, 94)
@@ -160,6 +161,16 @@ item_flag = "tutorial_niede_paper"
 [node name="CanvasLayer" parent="." instance=ExtResource("11_veuv8")]
 layer = 3
 
+[node name="dica" parent="CanvasLayer/papiro_holder" index="2"]
+z_index = 7
+offset_left = -329.87015
+offset_top = 417.89612
+offset_right = 924.1299
+offset_bottom = 1671.8961
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("13_mvu6f")
+
 [editable path="niede_puzzle"]
 [editable path="Player"]
 [editable path="keyboard_instruction"]
+[editable path="CanvasLayer"]

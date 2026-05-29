@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqofr4iqw8kuv"]
+[gd_scene load_steps=3 format=3 uid="uid://dqofr4iqw8kuv"]
 
 [ext_resource type="Script" uid="uid://b5182dq416nto" path="res://opções_menu.gd" id="1_o6ocu"]
+[ext_resource type="FontFile" uid="uid://c3f2ygeg8eg8" path="res://fonts/CutePixel.ttf" id="2_4cssk"]
 
 [node name="Opções_menu" type="Control"]
 layout_mode = 3
@@ -29,18 +30,25 @@ theme_override_constants/separation = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "OPÇÕES"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "Audio"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "Musica"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
@@ -55,6 +63,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "Efeitos Sonoros"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
@@ -70,6 +80,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "Mutar"
 
 [node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer4"]
@@ -78,8 +90,10 @@ layout_mode = 2
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer5"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4cssk")
+theme_override_font_sizes/font_size = 27
 text = "VOLTAR"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_voltar"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer5/Button" to="." method="_on_voltar"]

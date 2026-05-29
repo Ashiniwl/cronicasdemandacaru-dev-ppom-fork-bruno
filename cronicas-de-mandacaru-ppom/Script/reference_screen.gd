@@ -5,7 +5,9 @@ extends CanvasLayer
 
 var current_id: String = ""
 var papiros = {
-	"dica_1": preload("res://Sprites/papiros/dica_1.png"),
+	"pinturas": preload("res://dicas/pinturas.png"),
+	"variaveis": preload("res://dicas/variaveis.png"),
+	"saida": preload("res://dicas/saida.png")
 }
 
 func _ready():

@@ -1,35 +1,47 @@
 extends CanvasLayer
 
+@onready var bg_overlay = $BG_overlay
+@onready var menu_holder = $menu_holder
 @onready var continue_button = $menu_holder/continue_button
-@onready var opcoes = $Opções_menu
+@onready var opcs_button = $menu_holder/opcs_button
 
-func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	visible = false
-	opcoes.visible = false
+var menu_aberto: bool = false
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		if opcoes.visible:
-			opcoes.visible = false
-			$menu_holder.visible = true
-		elif visible:
-			visible = false
-			get_tree().set_deferred("paused", false)
-		else:
-			visible = true
-			$menu_holder.visible = true
-			opcoes.visible = false
-			get_tree().set_deferred("paused", true)
-			continue_button.grab_focus()
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS  # ← também aqui
+	menu_holder.visible = false
+	bg_overlay.visible = false
+	continue_button.pressed.connect(_on_continue_pressed)
+	opcs_button.pressed.connect(_on_opcs_pressed)
 
-func _on_continue_button_pressed() -> void:
-	visible = false
-	get_tree().set_deferred("paused", false)
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_E:
+			if menu_aberto:
+				fechar_menu()
+			else:
+				abrir_menu()
 
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+func abrir_menu():
+	menu_aberto = true
+	menu_holder.visible = true
+	bg_overlay.visible = true
+	get_tree().paused = true
 
-func _on_menu_button_pressed() -> void:
-	$menu_holder.visible = false
-	opcoes.visible = true
+func fechar_menu():
+	menu_aberto = false
+	menu_holder.visible = false
+	bg_overlay.visible = false
+	get_tree().paused = false
+
+func _on_continue_pressed():
+	fechar_menu()
+
+func _on_opcs_pressed():
+	menu_holder.visible = false
+	var opcs = load("res://Scene/menu_opcs.tscn").instantiate()
+	add_child(opcs)
+	opcs.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var tamanho = get_viewport().get_visible_rect().size
+	opcs.position = Vector2.ZERO
+	opcs.size = tamanho
